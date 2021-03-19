@@ -31,8 +31,8 @@ public class ProdutosController {
         }
 
         //TODO: salvar no banco de dados
-        //  addFlashAttribute fara ele permanecer mesmo apos o redirecto
-        attributes.addFlashAttribute("mensagem", "Produto cadastrado acom sucesso");
+        //  addFlashAttribute fara ele permanecer mesmo apos o redirect, cria uma sessao curta
+        attributes.addFlashAttribute("mensagem", "Produto cadastrado com sucesso");
         System.out.println("Nome produto" + produto.getNome());
         System.out.println(produto.getSku());
 

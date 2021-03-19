@@ -9,23 +9,30 @@
 </head>
 
 <body>
-    <h1> JREBEL</h1>
+    <h1> JREBE</h1>
 
     <form method="POST">
-        <span th:text="${sku}"></span>
+        <span th:text="${mensagem}"></span>
         <br>
         <label>SKU</label>
+
         <input type="text" name="sku">
         <br>
-        <span th:text="${nome}"></span>
-        <br>
+
+
         <label>Nome</label>
+        <span th:text="${mensagem}"></span>
+        <br>
         <input type="text" name="nome">
         <br>
         <label>Descricão</label>
-        <input type="text" name="nome">
+
+
         <br>
-        <input type="text" value="salvar">
+        <textarea name="descricao"></textarea>
+        <span th:text="${mensagem}"></span>
+        <br>
+            <input type="submit" value="salvar">
     </form>
 </body>
 

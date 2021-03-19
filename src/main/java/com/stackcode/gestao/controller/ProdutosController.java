@@ -14,29 +14,28 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class ProdutosController {
 
-	@RequestMapping("/produtos/novo")
-	public String novo() {
+    @RequestMapping("/produtos/novo")
+    public String novo() {
 
-		return "produtos/CadastroProduto";
-	}
+        return "produtos/CadastroProduto";
+    }
 
-	@RequestMapping(value = "/produtos/novo", method = RequestMethod.POST)
-	public String cadastrar(@Valid Produto produto, BindingResult result, Model model, RedirectAttributes attributes) {
-		
-		if(result.hasErrors()) {
-			model.addAttribute("mensagem","erro no formulario");
-			System.out.println("tem erro");
-			
-			return "produtos/CadastroProduto";
-		}
-                
-                //TODO: salvar no banco de dados
-                
-                //  addFlashAttribute fara ele permanecer mesmo apos o redirecto
-                attributes.addFlashAttribute("mensagem","Produto cadastrado com sucesso");
-		System.out.println("Nome produto"+produto.getNome());
-		System.out.println(produto.getSku());
+    @RequestMapping(value = "/produtos/novo", method = RequestMethod.POST)
+    public String cadastrar(@Valid Produto produto, BindingResult result, Model model, RedirectAttributes attributes) {
 
-		return "redirect:/produtos/novo";
-	}
+        if (result.hasErrors()) {
+            model.addAttribute("mensagem", "erro no formulario");
+            System.out.println("tem erro");
+
+            return "produtos/CadastroProduto";
+        }
+
+        //TODO: salvar no banco de dados
+        //  addFlashAttribute fara ele permanecer mesmo apos o redirecto
+        attributes.addFlashAttribute("mensagem", "Produto cadastrado acom sucesso");
+        System.out.println("Nome produto" + produto.getNome());
+        System.out.println(produto.getSku());
+
+        return "redirect:/produtos/novo";
+    }
 }

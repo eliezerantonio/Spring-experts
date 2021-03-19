@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.stackcode.gestao.model.Produto;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class ProdutosController {
@@ -20,7 +21,7 @@ public class ProdutosController {
 	}
 
 	@RequestMapping(value = "/produtos/novo", method = RequestMethod.POST)
-	public String cadastrar(@Valid Produto produto, BindingResult result, Model model) {
+	public String cadastrar(@Valid Produto produto, BindingResult result, Model model, RedirectAttributes attributes) {
 		
 		if(result.hasErrors()) {
 			model.addAttribute("mensagem","erro no formulario");
@@ -28,9 +29,14 @@ public class ProdutosController {
 			
 			return "produtos/CadastroProduto";
 		}
+                
+                //TODO: salvar no banco de dados
+                
+                //  addFlashAttribute fara ele permanecer mesmo apos o redirecto
+                attributes.addFlashAttribute("mensagem","Produto cadastrado com sucesso");
 		System.out.println("Nome produto"+produto.getNome());
 		System.out.println(produto.getSku());
 
-		return "redirect:produtos/novo";
+		return "redirect:/produtos/novo";
 	}
 }

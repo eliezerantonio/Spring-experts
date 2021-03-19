@@ -1,4 +1,4 @@
-/home/eliezer/Desktop/gestao/src/main/java/com/stackcode/gestao/model/Produto.java
-/home/eliezer/Desktop/gestao/src/main/java/com/stackcode/gestao/config/WebConfig.java
-/home/eliezer/Desktop/gestao/src/main/java/com/stackcode/gestao/config/init/AppInitializer.java
-/home/eliezer/Desktop/gestao/src/main/java/com/stackcode/gestao/controller/ProdutosController.java
+/home/eliezer/NetBeansProjects/gestao/src/main/java/com/stackcode/gestao/controller/ProdutosController.java
+/home/eliezer/NetBeansProjects/gestao/src/main/java/com/stackcode/gestao/model/Produto.java
+/home/eliezer/NetBeansProjects/gestao/src/main/java/com/stackcode/gestao/config/init/AppInitializer.java
+/home/eliezer/NetBeansProjects/gestao/src/main/java/com/stackcode/gestao/config/WebConfig.java

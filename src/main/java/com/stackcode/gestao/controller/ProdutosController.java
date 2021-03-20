@@ -15,8 +15,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class ProdutosController {
 
     @RequestMapping("/produtos/novo")
-    public String novo() {
-
+    public String novo(Model model) {
+        model.addAttribute(new Produto());  // dese jeito estou a passar o obejcto na pagina
         return "produtos/CadastroProduto";
     }
 
@@ -24,8 +24,7 @@ public class ProdutosController {
     public String cadastrar(@Valid Produto produto, BindingResult result, Model model, RedirectAttributes attributes) {
 
         if (result.hasErrors()) {
-            model.addAttribute("mensagem", "erro no formulario");
-            System.out.println("tem erro");
+          
 
             return "produtos/CadastroProduto";
         }

@@ -9,30 +9,39 @@
 </head>
 
 <body>
-    <h1> JREBE</h1>
+    <h1> Olá</h1>
+    <div th:each="erro: ${#fields.detailedErrors('${produto.*}')}">
+        <span th:text="${erro.message}"></span>
 
-    <form method="POST">
-        <span th:text="${mensagem}"></span>
+    </div>
+    <form method="POST" th:object="${produto}">
+
+        <span th:text="${#fields.hasAnyErrors()}"></span>
+
+
+
+        </span>
         <br>
         <label>SKU</label>
 
-        <input type="text" name="sku">
+        <input type="text" th:field="*{sku}">
         <br>
 
 
         <label>Nome</label>
-        <span th:text="${mensagem}"></span>
+
         <br>
-        <input type="text" name="nome">
+        <input type="text" th:field="*{nome}">
         <br>
         <label>Descricão</label>
 
 
         <br>
-        <textarea name="descricao"></textarea>
-        <span th:text="${mensagem}"></span>
+        <textarea name="descricao" th:field="*{descricao}"></textarea>
+
         <br>
-            <input type="submit" value="salvar">
+        <input type="submit" value="salvar">
+        <span th:text="${mensagem}"></span>
     </form>
 </body>
 

@@ -19,6 +19,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
 import com.stackcode.gestao.controller.ProdutosController;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 
 
@@ -65,6 +66,12 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 		resolver.setTemplateMode(TemplateMode.HTML); //mode do template HTML
 		return resolver;
 	}
-
+//habilia recursos estaticos
+  @Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
+	}
+ 
+        
 	
 }

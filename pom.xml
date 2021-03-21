@@ -1,82 +1,106 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.stackcode</groupId>
-	<artifactId>gestao</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<failOnMissingWebXml>false</failOnMissingWebXml>
-		<java.version>1.8</java.version>
-		<maven-compiler-pluging.version>3.2</maven-compiler-pluging.version>
-		<!-- Spring mvc -->
-		<spring.framework.version>4.3.0.RELEASE</spring.framework.version>
-		<!-- Servlet API -->
-		<servlet.version>3.1.0</servlet.version>
-		<!-- Thymeleaf -->
-		<thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
-		<!-- Bean Validation/ Hibernate Validator -->
-		<hibernate-validato.version>5.2.4.Final</hibernate-validato.version>
-	</properties>
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>org.apache.maven.plugin</artifactId>
-				<version>${maven-compiler-pluging.version}</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-	<!-- https://mvnrepository.com/artifact/org.springframework/spring-framework-bom -->
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-framework-bom</artifactId>
-				<version>${spring.framework.version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-	<dependencies>
-		<!-- Spring MVC -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-		</dependency>
-		<!-- Servlet API -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>${servlet.version}</version>
-			<scope>provided</scope>
-		</dependency>
-		<!-- Thymeleaf -->
-		<dependency>
-			<groupId>org.thymeleaf</groupId>
-			<artifactId>thymeleaf</artifactId>
-			<version>${thymeleaf.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.thymeleaf</groupId>
-			<artifactId>thymeleaf-spring4</artifactId>
-			<version>${thymeleaf.version}</version>
-		</dependency>
+	         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.stackcode</groupId>
+    <artifactId>gestao</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <java.version>1.8</java.version>
+        <maven-compiler-pluging.version>3.2</maven-compiler-pluging.version>
+        <!-- Spring mvc -->
+        <spring.framework.version>4.3.0.RELEASE</spring.framework.version>
+        <!-- Servlet API -->
+        <servlet.version>3.1.0</servlet.version>
+        <!-- Thymeleaf -->
+        <thymeleaf.version>3.0.0.RELEASE</thymeleaf.version>
+        <!-- Bean Validation/ Hibernate Validator -->
+        <hibernate-validato.version>5.2.4.Final</hibernate-validato.version>
+        <!-- Thymeleaf - Layout Dialect-->
+        <!-- Thymeleaf - Layout Dialect -->
+        <thymeleaf-layout-dialect.version>2.0.0</thymeleaf-layout-dialect.version>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>org.apache.maven.plugin</artifactId>
+                <version>${maven-compiler-pluging.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-framework-bom -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.framework.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <dependencies>
+        <!-- Spring MVC -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        <!-- Servlet API -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Thymeleaf -->
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>${thymeleaf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring4</artifactId>
+            <version>${thymeleaf.version}</version>
+        </dependency>
 
-		<!-- Bean Validation/ Hibernate Validator -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>${hibernate-validato.version}</version>
-			<scope>compile</scope>
-			<!-- esse compile diz que preciso desta bibloteca sempre -->
-		</dependency>
-	</dependencies>
+        <!-- Bean Validation/ Hibernate Validator -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validato.version}</version>
+            <scope>compile</scope>
+            <!-- esse compile diz que preciso desta bibloteca sempre -->
+        </dependency>
+        <!-- Thymeleaf - Layout Dialect-->
+        <!-- Thymeleaf - Layout Dialect -->
+        <dependency>
+            <groupId>nz.net.ultraq.thymeleaf</groupId>
+            <artifactId>thymeleaf-layout-dialect</artifactId>
+            <version>${thymeleaf-layout-dialect.version}</version>
+        </dependency>
+		
+                
+    </dependencies>
+        
+    <repositories>
+            
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/context/repositories/snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>  
 </project>

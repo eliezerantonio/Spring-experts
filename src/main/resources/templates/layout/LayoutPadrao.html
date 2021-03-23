@@ -8,9 +8,9 @@
 
     <title>Brewer</title>
 
-    <link rel="stylesheet" type="text/css" href="/gestao/layout/stylesheets/vendors.min.css" />
-    <link rel="stylesheet" type="text/css" href="/gestao/layout/stylesheets/algaworks.min.css" />
-    <link rel="stylesheet" type="text/css" href="/gestao/layout/stylesheets/application.css" />
+    <link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/vendors.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/algaworks.min.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/application.css}" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,7 +27,7 @@
 
                 <div class="navbar-header">
                     <a class="navbar-brand  hidden-xs" href="#">
-                        <img alt="AlgaWorks" src="/gestao/layout/images/logo.png" />
+                        <img alt="AlgaWorks" th:src="@{/layout/images/logo.png}" />
                     </a>
 
                     <ul class="nav  navbar-nav">
@@ -108,8 +108,8 @@
         </footer>
     </div>
 
-    <script src=" /gestao/layout/javascripts/vendors.min.js "></script>
-    <script src=" /gestao/layout/javascripts/algaworks.min.js "></script>
+    <script th:src="@{/layout/javascripts/vendors.min.js}"></script>
+    <script th:src="@{/layout/javascripts/algaworks.min.js}"></script>
 </body>
 
 </html>

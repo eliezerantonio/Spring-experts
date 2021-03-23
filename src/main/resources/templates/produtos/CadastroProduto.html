@@ -49,9 +49,17 @@
                 <div class="row">
                     <div class="col-sm-3 form-group">
                         <label for="estilo">Estilo</label>
-                        <select id="estilo" class="form-control">
+                        <div class="bw-field-action">
+                            <select id="estilo" class="form-control">
                             <option value="">Selecione o Estilo</option>
                         </select>
+                            <div class="bw-field-action__icon">
+                                <a href="#" data-toggle="modal" data-target="#modalCadastroRapidoEstilo">
+
+                                    <i class="glyphicon glyphicon-plus-sign bw-glyphicon-large"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-sm-3 form-group">
@@ -124,7 +132,8 @@
 
             </form>
         </div>
-
+        <!--Modal cadastro estilo-->
+        <div th:replace="estilo/CadastroRapidoEstilo :: modal"></div>
     </section>
 
 

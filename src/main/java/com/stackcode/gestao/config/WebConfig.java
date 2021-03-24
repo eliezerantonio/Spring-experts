@@ -19,6 +19,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
 import com.stackcode.gestao.controller.ProdutosController;
+import nz.net.ultraq.thymeleaf.LayoutDialect;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 
@@ -51,6 +52,7 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 		SpringTemplateEngine engine =new SpringTemplateEngine();
 		engine.setEnableSpringELCompiler(true);
 		engine.setTemplateResolver(templateResolver());
+                engine.addDialect(new LayoutDialect());
 		return engine;
 		
 	}

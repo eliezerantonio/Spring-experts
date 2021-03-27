@@ -1,4 +1,4 @@
-com/stackcode/gestao/controller/ProdutosController.class
-com/stackcode/gestao/config/init/AppInitializer.class
 com/stackcode/gestao/model/Produto.class
 com/stackcode/gestao/config/WebConfig.class
+com/stackcode/gestao/controller/ProdutosController.class
+com/stackcode/gestao/config/init/AppInitializer.class
